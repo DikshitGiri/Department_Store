@@ -3,8 +3,9 @@
 *@
 @{
 
-    Layout = null;
+    Layout = "LandingPage";
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +52,7 @@
                             <label for="login-password" class="label-material">Password</label>
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-success">Login</button>
 
                         </div>
                     </form><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup" data-toggle="modal" data-target="#exampleModal">Signup</a>
@@ -63,18 +64,39 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <h5 class="modal-title center" id="exampleModalLabel">Inventory Manager</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <form method="post" asp-action="Register" asp-controller="Inventory" class="text-left form-validate">
+                                        <div class="form-group-material">
+                                            <input id="login-username" type="text" name="Name" required data-msg="Please enter your Username" class="input-material">
+                                            <label for="login-username" class="label-material">Username</label>
+                                        </div>
+                                       
+                                        <div class="form-group-material">
+                                            <input id="login-password" type="email" name="Email" required data-msg="Please enter your Email" class="input-material">
+                                            <label for="login-password" class="label-material">Email</label>
+                                        </div>
+                                        <div class="form-group-material">
+                                            <input id="login-password" type="Password" name="Password" required data-msg="Please enter your Password" class="input-material">
+                                            <label for="login-password" class="label-material">Password</label>
+                                        </div>
+                                        <div class="form-group-material">
+                                            <input id="login-password" type="password" name="RePassword" required data-msg="Please enter your confirm Password" class="input-material">
+                                            <label for="login-password" class="label-material">Confirm Password</label>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <button type="submit" class="btn btn-success">Register</button>
+
+                                        </div>
+                                    </form>
+
+                                  
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -95,5 +117,7 @@
     <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="~/assets/js/front.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+ 
 </body>
 </html>

@@ -44,8 +44,8 @@
 
                                 <td>@items.Quantity</td>
                                 <td>@items.Rate</td>
-                                <td><p>coming soon</p></td>
-                                <td><button type="submit" class="btn btn-primary">Update</button><button type="submit" class="btn btn-danger">Delete</button></td>
+                                <td>@items.TotalCost</td>
+                                <td><a asp-route-id="@items.Id" asp-controller="Inventory" asp-action="Edit" class="btn btn-primary">Update</a><a class="btn btn-danger" asp-controller="Inventory" asp-action="Delete" asp-route-id="@items.Id">Delete</a></td>
                                 @{
                                     Counter++;
                                 }

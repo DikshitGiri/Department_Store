@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WGa3xFFeDr2Lr5ZlzNLfJOgLTzOUh+pXE06WNbc/n+Wz/poM14CpvaKFe1gF/Q7D9b9olcONc82rYKeoR7tVrQ==",
+  "dgSpecHash": "qB1bJ+f7EVIZ3S8d9UOqHbEnPPMACuhpyOjq2NmxGfR17DrEn/Y2mhHjLze69Sl+Jk108trX114bZHIXLQL0PA==",
   "success": true,
   "projectFilePath": "F:\\DepartmentStore\\DepartmentStore\\DepartmentStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Grey\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -29,6 +30,7 @@
     "C:\\Users\\Grey\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\Grey\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\npgsql\\6.0.6\\npgsql.6.0.6.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.6\\npgsql.entityframeworkcore.postgresql.6.0.6.nupkg.sha512",
     "C:\\Users\\Grey\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

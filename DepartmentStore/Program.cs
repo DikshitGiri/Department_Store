@@ -1,3 +1,4 @@
+using AspNetCoreHero.ToastNotification;
 using DepartmentStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<DbContext, ApplicationDbContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
 builder.Services.AddDbContext<ApplicationDbContext>(x =>
 {
     x.UseNpgsql(builder.Configuration.GetConnectionString("data"));

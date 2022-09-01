@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    Layout = "MyLayout";
+}
+<br />
+<div class="col-lg-10">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h4> EntryPoint</h4>
+        </div>
+        <div class="card-body">
+            <p>Update Items</p>
+            <form class="form-horizontal" method="post" asp-action="Update">
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Date</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" value="@Model.CreatedDate" class="form-control form-control-success" name="CreatedDate">
+                    </div>
+                </div>
+                <input hidden type="text" value="@Model.Id" class="form-control form-control-warning" name="Id">
+
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Ctegory</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text"  value="@Model.Category" class="form-control form-control-warning" name="Category">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>ItemName</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text"  value="@Model.Name" class="form-control form-control-warning" name="Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Quantitiy/Number</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="number"  value="@Model.Quantity" class="form-control form-control-warning" name="Quantity">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Price/Unit</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="number" value="@Model.Rate" class="form-control form-control-warning" name="Rate">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <input type="submit" value="Update" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

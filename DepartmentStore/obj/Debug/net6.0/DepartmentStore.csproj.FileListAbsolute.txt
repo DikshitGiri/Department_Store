@@ -56,3 +56,7 @@ F:\DepartmentStore\DepartmentStore\obj\Debug\net6.0\ref\DepartmentStore.dll
 F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\BCrypt.Net-Next.dll
 F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\xunit.abstractions.dll
 F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\xunit.core.dll
+F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\DepartmentStore\DepartmentStore\obj\Debug\net6.0\DepartmentStore.MvcApplicationPartsAssemblyInfo.cs
