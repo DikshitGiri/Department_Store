@@ -1,0 +1,99 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="~/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="~/assets/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="~/assets/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/assets/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <!-- Favicon-->
+
+
+</head>
+<body>
+    <div class="page login-page">
+        <div class="container">
+            <div class="form-outer text-center d-flex align-items-center">
+                <div class="form-inner">
+                    <div class="logo text-uppercase"><span>Inventory</span><strong class="text-primary">Manager</strong></div>
+
+                    <form method="post" asp-action="LoginCheck" asp-controller="Inventory" class="text-left form-validate">
+                        <div class="form-group-material">
+                            <input id="login-username" type="text" name="Name" required data-msg="Please enter your username" class="input-material">
+                            <label for="login-username" class="label-material">Username</label>
+                        </div>
+                        <div class="form-group-material">
+                            <input id="login-password" type="Password" name="Password" required data-msg="Please enter your password" class="input-material">
+                            <label for="login-password" class="label-material">Password</label>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Login</button>
+
+                        </div>
+                    </form><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup" data-toggle="modal" data-target="#exampleModal">Signup</a>
+                    
+                
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="~/assets/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="~/assets/vendor/chart.js/Chart.min.js"></script>
+    <script src="~/assets/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Main File-->
+    <script src="~/assets/js/front.js"></script>
+</body>
+</html>

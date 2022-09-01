@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    Layout = "MyLayout";
+}
+<br />
+<div class="col-lg-10">
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h4> EntryPoint</h4>
+        </div>
+        <div class="card-body">
+            <p>Keep records of items digitally</p>
+            <form class="form-horizontal" method="post" asp-action="EntryPoint">
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Date</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="form-control form-control-success" name="CreatedDate">
+                    </div>
+                </div>
+                <input hidden type="text" class="form-control form-control-warning" name="Id">
+
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Ctegory</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-warning" name="Category">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>ItemName</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-warning" name="Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Quantitiy/Number</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control form-control-warning" name="Quantity">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Price/Unit</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control form-control-warning" name="Rate">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <input type="submit" value="Insert" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
