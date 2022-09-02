@@ -15,5 +15,6 @@ namespace DepartmentStore.Data
         public DbSet<Register> register { get; set; }
         public DbSet<Login> login { get; set; }
         public DbSet<Entry> entry { get; set; }
+        public DbSet<Search> search { get; set; }
     }
 }

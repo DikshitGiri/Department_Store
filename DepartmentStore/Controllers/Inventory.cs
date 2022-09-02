@@ -1,7 +1,9 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using DepartmentStore.Data;
 using DepartmentStore.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace DepartmentStore.Controllers
 {
@@ -16,10 +18,11 @@ namespace DepartmentStore.Controllers
             this.Context = context;
             _notyf = notyf;
         }
-
+        [HttpPost]
         public IActionResult Register(Register reg)
 
         {
+            reg.Password = BCrypt.Net.BCrypt.HashPassword(reg.Password);
             Context.register.Add(reg);
             Context.SaveChanges();
 
@@ -35,15 +38,18 @@ namespace DepartmentStore.Controllers
         {
             //Context.login.Add(lg);
             //Context.SaveChanges();
-            var obj = Context.register.Where(a => a.Name.Equals(rg.Name) && a.Password.Equals(rg.Password)).FirstOrDefault();
-            if (obj != null)
+            //var obj = Context.register.Where(a => a.Name.Equals(rg.Name) && a.Password.Equals(rg.Password)).FirstOrDefault();
+            var obj = Context.register.SingleOrDefault(x=> x.Name==rg.Name);
+            if (obj != null && BCrypt.Net.BCrypt.Verify(rg.Password,obj.Password))
             {
                 //Session["UserID"] = obj.UserId.ToString();
                 //Session["UserName"] = obj.UserName.ToString();
                 //return RedirectToAction("UserDashBoard");
-                _notyf.Success("Successful Login");
                 
+                
+                _notyf.Success("Successful Login");
                 return RedirectToAction("Home");
+               
             }
             else
             {
@@ -93,6 +99,11 @@ namespace DepartmentStore.Controllers
             _notyf.Success("Successful Delete");
             return RedirectToAction("Result");
         }
+
+        //public  IActionResult Search(DateOnly date)
+        //{
+        //    return
+        //}
 
         public IActionResult Summury()
         {

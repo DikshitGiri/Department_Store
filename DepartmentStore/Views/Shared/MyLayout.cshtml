@@ -114,9 +114,11 @@
         </header>
         <div class="Content_wrapper container-fluid">
             @RenderBody()
-            <script src="~/assets/js/site.js" asp-append-version="true"></script>
+           @* <script src="~/assets/js/site.js" asp-append-version="true"></script>
             @await Component.InvokeAsync("Notyf")
-            @RenderSection("Scripts", required: false)
+            @RenderSection("Scripts", required: false)*@
+
+           
 
         </div>
 
@@ -147,6 +149,19 @@
     <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="~/assets/js/charts-home.js"></script>
     <!-- Main File-->
+   
     <script src="~/assets/js/front.js"></script>
+                  
+   
+  
+   
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="~/js/ready.js"></script>
+
+
+
+
 </body>
 </html>

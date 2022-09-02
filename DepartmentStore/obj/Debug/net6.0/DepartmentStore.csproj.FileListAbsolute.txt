@@ -60,3 +60,4 @@ F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\AspNetCoreHero.ToastNotifica
 F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
 F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\Newtonsoft.Json.dll
 F:\DepartmentStore\DepartmentStore\obj\Debug\net6.0\DepartmentStore.MvcApplicationPartsAssemblyInfo.cs
+F:\DepartmentStore\DepartmentStore\bin\Debug\net6.0\libman.json

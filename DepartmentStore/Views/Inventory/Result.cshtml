@@ -1,26 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
-    Layout = "MyLayout";
+    Layout = "myLayout";
     int Counter = 1;
 
 }
+<link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
 @model IEnumerable<DepartmentStore.Models.Entry>
+<br />
 
-<div class="col-lg-10">
-    <div class="card">
-        <div class="card-header">
-            <h4>Items</h4>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
+                <table class="table table-striped table-lg " id="mytable">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -30,7 +19,7 @@
                             <th>Quantity</th>
                             <th>Price/Unit</th>
                             <th>TotalPrice</th>
-
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +34,7 @@
                                 <td>@items.Quantity</td>
                                 <td>@items.Rate</td>
                                 <td>@items.TotalCost</td>
-                                <td><a asp-route-id="@items.Id" asp-controller="Inventory" asp-action="Edit" class="btn btn-primary">Update</a><a class="btn btn-danger" asp-controller="Inventory" asp-action="Delete" asp-route-id="@items.Id">Delete</a></td>
+                                <td ><a asp-route-id="@items.Id" asp-controller="Inventory" asp-action="Edit" class="btn btn-outline-primary">Update</a><a class="btn btn-outline-danger" asp-controller="Inventory" asp-action="Delete" asp-route-id="@items.Id">Delete</a></td>
                                 @{
                                     Counter++;
                                 }
@@ -54,7 +43,7 @@
                         }
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
+
+  
+
+  
