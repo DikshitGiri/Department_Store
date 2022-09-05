@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = "LandingPage";
+}
+
+@model DepartmentStore.Models.Register;
+<html>
+<body>
+
+    <div class="parent container d-flex justify-content-center align-items-center h-100">
+      
+        <div class="container col-sm-6 bg-opacity-75">
+          
+
+                   
+
+    <form method="post" asp-action="Register" asp-controller="Inventory" class="text-left form-validate ">
+    <div class="form-group-material">
+        <input id="login-username" type="text" name="Name" required data-msg="please enter your username"class="input-material">
+        <label for="login-username" class="label-material">Username</label>
+        <span asp-validation-for="Name" class="text-danger"> </span>
+    </div>
+
+    <div class="form-group-material">
+        <input id="login-password" type="email" name="Email" required data-msg="please enter your email" class="input-material">
+        <label for="login-password" class="label-material">Email</label>
+                                <span asp-validation-for="Email" class="text-danger"> </span>
+    </div>
+    <div class="form-group-material">
+        <input id="login-password" type="Password" name="Password" required data-msg="Please enter your Password" class="input-material">
+        <label for="login-password" class="label-material">Password</label>
+                                <span asp-validation-for="Password" class="text-danger"> </span>
+    </div>
+    <div class="form-group-material">
+        <input id="login-password" type="password" name="RePassword" required data-msg="Please enter your confirm Password" class="input-material">
+        <label for="login-password" class="label-material">Confirm Password</label>
+                            <span asp-validation-for="Repassword" class="text-danger"> </span>
+                                
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success">Register</button>
+
+    </div>
+</form>
+@*<div asp-validation-summary="All" class="text-danger">
+</div>*@
+</div>
+</div>
+
+  
+
+</body></html>
+

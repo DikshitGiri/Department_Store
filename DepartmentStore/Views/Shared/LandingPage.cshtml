@@ -32,14 +32,15 @@
  <body>
 <container>
    
-@* @await component.invokeasync("notyf")
- @rendersection("scripts", required: false)*@
+
 
  @RenderBody();
 </container>
 
 
      <!-- JavaScript files-->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script src="~/assets/vendor/jquery/jquery.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
@@ -49,7 +50,10 @@
     <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="~/assets/js/front.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     <script src="~/assets/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+     @await Component.InvokeAsync("Notyf")
+    @RenderSection("scripts", required: false)
    </body>
    </html>

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DepartmentStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220901114435_m2")]
-    partial class m2
+    [Migration("20220904070643_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -95,13 +95,22 @@ namespace DepartmentStore.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Repassword")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.ToTable("register");
+                });
+
+            modelBuilder.Entity("DepartmentStore.Models.Search", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.HasKey("Id");
+
+                    b.ToTable("search");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DepartmentStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220901100115_m1")]
-    partial class m1
+    [Migration("20220904071939_new")]
+    partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,6 +73,48 @@ namespace DepartmentStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("login");
+                });
+
+            modelBuilder.Entity("DepartmentStore.Models.Register", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Repassword")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("register");
+                });
+
+            modelBuilder.Entity("DepartmentStore.Models.Search", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.HasKey("Id");
+
+                    b.ToTable("search");
                 });
 #pragma warning restore 612, 618
         }

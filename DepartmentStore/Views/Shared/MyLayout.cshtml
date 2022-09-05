@@ -54,9 +54,9 @@
                 <ul id="side-main-menu" class="side-menu list-unstyled">
                     <li><a asp-action="Summury" asp-controller="Inventory" ><i class="icon-home"></i>Home </a></li>
                     <li><a asp-action="Home" asp-controller="Inventory" > <i class="icon-form"></i>New Entry</a></li>
-                    <li><a href="~/assets/charts.html"> <i class="fa fa-bar-chart"></i>Chart </a></li>
-                    <li><a asp-controller="Inventory" asp-action="Result"> <i class="icon-grid"></i>Tables </a></li>
-                    <li>
+                   @* <li><a href="~/assets/charts.html"> <i class="fa fa-bar-chart"></i>Chart </a></li>*@
+                    <li><a asp-controller="Inventory" asp-action="Result"> <i class="icon-grid"></i>Table </a></li>
+                   @* <li>
                         <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
                         <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                             <li><a href="#">Page</a></li>
@@ -70,10 +70,10 @@
                             <i class="icon-mail"></i>Demo
                             <div class="badge badge-warning">6 New</div>
                         </a>
-                    </li>
+                    </li>*@
                 </ul>
             </div>
-            <div class="admin-menu">
+            @*<div class="admin-menu">
                 <h5 class="sidenav-heading">Second menu</h5>
                 <ul id="side-admin-menu" class="side-menu list-unstyled">
                     <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
@@ -86,7 +86,7 @@
                     <li> <a href=""> <i class="icon-flask"> </i>Demo</a></li>
                     <li> <a href=""> <i class="icon-picture"> </i>Demo</a></li>
                 </ul>
-            </div>
+            </div>*@
         </div>
     </nav>
     <div class="page">
@@ -114,9 +114,7 @@
         </header>
         <div class="Content_wrapper container-fluid">
             @RenderBody()
-           @* <script src="~/assets/js/site.js" asp-append-version="true"></script>
-            @await Component.InvokeAsync("Notyf")
-            @RenderSection("Scripts", required: false)*@
+         
 
            
 
@@ -160,7 +158,9 @@
     
     <script src="~/js/ready.js"></script>
 
-
+                    <script src="~/js/site.js" asp-append-version="true"></script>
+                    @await Component.InvokeAsync("Notyf")
+                    @RenderSection("scripts", required: false)
 
 
 </body>

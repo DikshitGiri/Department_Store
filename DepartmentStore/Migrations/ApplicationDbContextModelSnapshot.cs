@@ -101,6 +101,19 @@ namespace DepartmentStore.Migrations
 
                     b.ToTable("register");
                 });
+
+            modelBuilder.Entity("DepartmentStore.Models.Search", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.HasKey("Id");
+
+                    b.ToTable("search");
+                });
 #pragma warning restore 612, 618
         }
     }

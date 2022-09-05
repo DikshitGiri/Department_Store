@@ -5,7 +5,9 @@
 
 @{
     Layout = "MyLayout";
-}
+ }
+@model DepartmentStore.Models.Entry;
+
 <br />
 <div class="col-lg-10">
     <div class="card">
@@ -20,7 +22,7 @@
                         <label>Date</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="datetime-local" value="@Model.CreatedDate" class="form-control form-control-success" name="CreatedDate">
+                        <input type="datetime-local" asp-for="CreatedDate" class="form-control form-control-success" name="CreatedDate">
                     </div>
                 </div>
                 <input hidden type="text" value="@Model.Id" class="form-control form-control-warning" name="Id">

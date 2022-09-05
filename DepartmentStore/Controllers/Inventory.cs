@@ -3,6 +3,7 @@ using DepartmentStore.Data;
 using DepartmentStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq;
 
 namespace DepartmentStore.Controllers
@@ -18,41 +19,58 @@ namespace DepartmentStore.Controllers
             this.Context = context;
             _notyf = notyf;
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Register(Register reg)
 
         {
-            reg.Password = BCrypt.Net.BCrypt.HashPassword(reg.Password);
-            Context.register.Add(reg);
-            Context.SaveChanges();
+            if (!ModelState.IsValid) {
+                //reg.Repassword= BCrypt.Net.BCrypt.HashPassword(reg.Repassword);
+                //reg.Password = BCrypt.Net.BCrypt.HashPassword(reg.Password);
+                
+                return View();
 
-            return RedirectToAction("Home");  
+                //return RedirectToAction("Home");
+            }
+            else {
+                reg.Repassword = BCrypt.Net.BCrypt.HashPassword(reg.Repassword);
+                reg.Password = BCrypt.Net.BCrypt.HashPassword(reg.Password);
+                Context.register.Add(reg);
+                Context.SaveChanges();
+                _notyf.Success("Welcome Manager");
+                return RedirectToAction("Home");
+            }
+           
         }
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult LoginCheck(Register rg)
-
+        public IActionResult LoginCheck(string name,string password)
         {
-            //Context.login.Add(lg);
-            //Context.SaveChanges();
+          
             //var obj = Context.register.Where(a => a.Name.Equals(rg.Name) && a.Password.Equals(rg.Password)).FirstOrDefault();
-            var obj = Context.register.SingleOrDefault(x=> x.Name==rg.Name);
-            if (obj != null && BCrypt.Net.BCrypt.Verify(rg.Password,obj.Password))
+            var obj = Context.register.FirstOrDefault(x => x.Name == name);
+            if (obj != null && BCrypt.Net.BCrypt.Verify(password, obj.Password))
             {
                 //Session["UserID"] = obj.UserId.ToString();
                 //Session["UserName"] = obj.UserName.ToString();
                 //return RedirectToAction("UserDashBoard");
-                
-                
-                _notyf.Success("Successful Login");
+
+
+                _notyf.Success("Welcome User");
                 return RedirectToAction("Home");
-               
+
             }
             else
             {
+                _notyf.Error("Username or password do not matched");
                 return RedirectToAction("Login");
             }
 
@@ -66,12 +84,18 @@ namespace DepartmentStore.Controllers
         }
         [HttpPost]
         public IActionResult EntryPoint(Entry e)
-
         {
-            Context.entry.Add(e);
-            Context.SaveChanges();
+
+           
+                Context.entry.Add(e);
+                Context.SaveChanges();
+            _notyf.Success("Data inserted successfully");
             return RedirectToAction("Result");
+          
+
         }
+
+        
         public IActionResult Result()
         {
             return View(Context.entry.ToList());
@@ -96,7 +120,7 @@ namespace DepartmentStore.Controllers
            
             Context.entry.Remove(deleteid);
             Context.SaveChanges();
-            _notyf.Success("Successful Delete");
+            _notyf.Error("Successful Delete");
             return RedirectToAction("Result");
         }
 
@@ -116,3 +140,4 @@ namespace DepartmentStore.Controllers
         }
     }
 }
+
